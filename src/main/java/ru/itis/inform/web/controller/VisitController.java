@@ -28,8 +28,8 @@ public class VisitController {
 
     @RequestMapping(value = "/statistic", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
-    public PeriodStatistic getDayStatistic(@RequestParam(value = "startDate") Date startDate,
-                                           @RequestParam(value = "endDate") Date endDate) {
+    public PeriodStatistic getDayStatistic(@RequestParam(value = "from") Date startDate,
+                                           @RequestParam(value = "to") Date endDate) {
         PeriodStatistic periodStatistic = visitService.getPeriodStatistic(startDate, endDate);
         return periodStatistic;
     }
